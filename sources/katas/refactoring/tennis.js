@@ -172,14 +172,8 @@ function convertScoreToString(score) {
 
 function getScore1Bis(player1, player2) {
     if (player1 === player2) {
-        if (player1 == 0) {
-            return "Love-All";
-        }
-        if (player1 == 1) {
-            return "Fifteen-All";
-        }
-        if (player1 == 2) {
-            return "Thirty-All";
+        if (player1 <= 2) {
+            return convertScoreToString(player1) + "-All";
         }
         return "Deuce";
     }
