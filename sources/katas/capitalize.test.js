@@ -15,7 +15,7 @@ const { capitalize } = require('./capitalize');
 describe('capitalize kata', function(){
 
     it('should be defined', function(){
-        expect(lowCoverage).toBeInstanceOf(Function);
+        expect(capitalize).toBeInstanceOf(Function);
     });
 
 
