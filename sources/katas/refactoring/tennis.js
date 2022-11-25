@@ -165,17 +165,22 @@ function getScore3(p1, p2) {
     }
 }
 
-function convertScoreToString(score) {
-    scoreTab = ["Love", "Fifteen", "Thirty", "Forty"]
-    return scoreTab[score];
+function scoreDisplay(score) {
+    const points = ["Love", "Fifteen", "Thirty", "Forty"]
+    return points[score];
 }
+function scoreDisplay2(player1, player2) {
+    const points = ["Love", "Fifteen", "Thirty", "Forty"]
+    if (player1 <= 2 && player1 == player2) {
+        return points[player1] + "-All"
+    }
+    return "Deuce";
+}
+
 
 function getScore1Bis(player1, player2) {
     if (player1 === player2) {
-        if (player1 <= 2) {
-            return convertScoreToString(player1) + "-All";
-        }
-        return "Deuce";
+        return scoreDisplay2(player1, player2);
     }
     if (player1 >= 4 || player2 >= 4) {
         let minusResult = player1 - player2;
@@ -184,9 +189,10 @@ function getScore1Bis(player1, player2) {
         if (minusResult >= 2) {return "Win for player1";}
         return "Win for player2";
     }
-    return convertScoreToString(player1) 
-        + "-" + convertScoreToString(player2);
+    return scoreDisplay(player1) 
+        + "-" + scoreDisplay(player2);
 }
+
 module.exports = {
     getScore1,
     getScore2,
