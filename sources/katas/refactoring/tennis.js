@@ -182,12 +182,12 @@ function getScore1Bis(player1, player2) {
     }
     if (player1 >= 4 || player2 >= 4) {
         let minusResult = player1 - player2;
-        if (minusResult === 1) {score = "Advantage player1";}
-        else if (minusResult === -1) {score = "Advantage player2";}
-        else if (minusResult >= 2) {score = "Win for player1";}
-        else {score = "Win for player2";}
+        if (minusResult === 1) {return "Advantage player1";}
+        if (minusResult === -1) {return  "Advantage player2";}
+        if (minusResult >= 2) {return "Win for player1";}
+        return "Win for player2";
     } else {
-        for (var i = 1; i < 3; i++) {
+        for (let i = 1; i < 3; i++) {
             if (i === 1) {tempScore = player1;}
             else {
                 score += "-";
