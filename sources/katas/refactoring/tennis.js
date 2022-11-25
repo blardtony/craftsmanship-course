@@ -165,9 +165,12 @@ function getScore3(p1, p2) {
     }
 }
 
+function convertScoreToString(score) {
+    scoreTab = ["Love", "Fifteen", "Thirty", "Forty"]
+    return scoreTab[score];
+}
+
 function getScore1Bis(player1, player2) {
-    let score = "";
-    let tempScore = 0;
     if (player1 === player2) {
         if (player1 == 0) {
             return "Love-All";
@@ -186,31 +189,9 @@ function getScore1Bis(player1, player2) {
         if (minusResult === -1) {return  "Advantage player2";}
         if (minusResult >= 2) {return "Win for player1";}
         return "Win for player2";
-    } else {
-        for (let i = 1; i < 3; i++) {
-            if (i === 1) {tempScore = player1;}
-            else {
-                score += "-";
-                tempScore = player2;
-            }
-            if (tempScore === 0) {
-                score += "Love";
-            }
-            if (tempScore === 1) {
-                
-                score +="Fifteen";
-            }
-            if (tempScore === 2) {
-                
-                score +="Thirty";
-            }
-            if (tempScore === 3) {
-                
-                score +="Forty";
-            }
-        }
     }
-    return score;
+    return convertScoreToString(player1) 
+        + "-" + convertScoreToString(player2);
 }
 module.exports = {
     getScore1,
