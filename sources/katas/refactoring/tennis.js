@@ -166,25 +166,22 @@ function getScore3(p1, p2) {
 }
 
 function getScore1Bis(player1, player2) {
-    var score = "";
-    var tempScore = 0;
+    let score = "";
+    let tempScore = 0;
     if (player1 === player2) {
-        switch (player1) {
-            case 0:
-                score = "Love-All";
-                break;
-            case 1:
-                score = "Fifteen-All";
-                break;
-            case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
+        if (player1 == 0) {
+            return "Love-All";
         }
-    } else if (player1 >= 4 || player2 >= 4) {
-        var minusResult = player1 - player2;
+        if (player1 == 1) {
+            return "Fifteen-All";
+        }
+        if (player1 == 2) {
+            return "Thirty-All";
+        }
+        return "Deuce";
+    }
+    if (player1 >= 4 || player2 >= 4) {
+        let minusResult = player1 - player2;
         if (minusResult === 1) {score = "Advantage player1";}
         else if (minusResult === -1) {score = "Advantage player2";}
         else if (minusResult >= 2) {score = "Win for player1";}
