@@ -193,19 +193,20 @@ function getScore1Bis(player1, player2) {
                 score += "-";
                 tempScore = player2;
             }
-            switch (tempScore) {
-                case 0:
-                    score += "Love";
-                    break;
-                case 1:
-                    score += "Fifteen";
-                    break;
-                case 2:
-                    score += "Thirty";
-                    break;
-                case 3:
-                    score += "Forty";
-                    break;
+            if (tempScore === 0) {
+                score += "Love";
+            }
+            if (tempScore === 1) {
+                
+                score +="Fifteen";
+            }
+            if (tempScore === 2) {
+                
+                score +="Thirty";
+            }
+            if (tempScore === 3) {
+                
+                score +="Forty";
             }
         }
     }
